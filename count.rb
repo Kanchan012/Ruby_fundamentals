@@ -31,9 +31,28 @@ class Cat
   def self.count
     puts "Number of cats: #{@@count}"
   end
-end
 
-cathy = Cat.new("Cathy", 6)
-beth = Cat.new("Beth", 5)
-kitty = Cat.new("Kitty", 7)
-Cat.count
+  def say_human_age
+    if @age == 1
+      human_years = 15
+    elsif @age == 2
+      # add 15 + 9
+      human_years = 24
+    else
+      # add the first 2 years plus the age subtracted by the first two years, multiplied by 4
+      human_years = 24 + (@age - 2) * 4
+    end
+
+    puts "#{@age}year old cat=#{human_years}year old in human years!"
+  end
+end
+cat_1 = Cat.new("Beth", 4)
+cat_2 = Cat.new("Kitty", 7)
+cat_3 = Cat.new("Suri", 6)
+
+cat_1.say_human_age
+cat_2.say_human_age
+cat_3.say_human_age
+cat_1.say_introduction
+cat_2.say_introduction
+cat_3.say_introduction
